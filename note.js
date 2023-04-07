@@ -145,7 +145,7 @@ const add = (function () {
 // Note how add(), or "function () {counter += 1; return counter}", has access to "counter" inside of its original scope, even though it is not a global variable.
 
 
-//Ajax follows a basic fetch-do-error procedure.
+// Ajax follows a basic fetch-do-error procedure
 
 function printerror() {
     console.log("I found error!")
@@ -154,4 +154,51 @@ function printsuccess() {
     console.log("I have fetched from the website!")
 }
 
-fetch("https://www.google.com/").then(printsuccess()).catch(printerror())
+
+// These two formats are the same. Then can accept two arguments, and if only given one, will default that to be the function to be called on success.
+fetch("https://www.google.com/").then(printsuccess).catch(printerror)
+fetch("https://www.google.com/").then(printsuccess, printerror)
+
+
+
+// This will return the status of the request
+fetch('https://api.github.com/users/xiaotian/repos')
+.then(resp => console.log(resp.status))
+
+// A different return code to indicate failure
+fetch('https://api.github.com/aiweugwaegij')
+.then(resp => console.log(resp.status))
+
+// This will convert the return value to a json string, then the console will log that json file
+fetch('https://api.github.com/users/xiaotian/repos')
+.then(resp => resp.json())
+.then(repos => console.log(repos))
+
+// And this is an example of using that json file for further operations
+fetch('https://api.github.com/users/xiaotian/repos')
+.then(resp => resp.json())
+.then(repos => { for (const repo of repos) { console.log(repo.name) }})
+.catch(ex => { console.error(ex) })
+
+
+
+// Add a reference for file responses here - I don't know of a file that just hosts a file which also knows how to fetch.
+fetch('https://liuj15-mymoviequotes.web.app/images/rose_logo.png')
+.then(resp => resp.blob())
+.then(image => console.log(image))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

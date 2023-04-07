@@ -1,5 +1,117 @@
 
 
+
+
+
+
+
+
+
+
+
+
+const message = 'Hello World!';
+alert(message);
+
+{
+    // this is a block containing 2 statements
+    const message = 'Hello!';
+    alert(message);
+}
+
+typeof 'hello' // String
+typeof 10 // Number
+typeof true // Boolean
+typeof { ninja: 'turtle' } // Object
+typeof [ 1, 2, 3 ] // Object
+
+const num = 3
+num = 4 // This will throw an error as a constant will not change
+const num2 = 6
+num2 = 17
+num2 // 17
+
+const obj1 = { value: 12 } // If a constant object contains a value, it can be modified.
+obj1.value = 25 // change the value
+obj1.value // 25
+
+
+// var declares global variables; let declares local variables which does not leave its block.
+{
+    var a = 15
+    let b = 7 
+}
+alert(a) // This will print 15
+alert(b) // This will fail
+
+
+
+// Use \ to escape characters
+
+// Use ` to create a format string that allows for the use of variables.
+
+let num3 = 5
+`10+${num3} is equal to ${10+num3}` // '10+5 is equal to 15'
+
+
+uniqueID = Symbol('this is a unique ID');
+uniqueID // Symbol('this is a unique ID')
+
+
+let A = Symbol.for('shared symbol');
+let B = Symbol.for('shared symbol');
+
+// These two point to the same object
+
+
+
+
+// Javascript has a shared type for all numbers. However, it is possible to identify if they are integers:
+typeof 42; // Number
+typeof 3.14159; // Number
+Number.isInteger(42); // True
+Number.isInteger(3.142); // False
+
+
+
+
+
+// .toExponential(n) will print a number in scientific notation with as many non-zero digits as there is.
+// .toFixed(n) will print a number in decimal notation to n decimal places. n must be positive.
+// .toPrecision(n) will print a number in scientific notation with n total digits of precision.
+
+Number("126.889") // Will give number 126.889 - essentially typecast
+
+// ! NOT
+// && AND
+// || OR
+// ~ Bitwise NOT
+
+// = sets the value on the left to the right
+// == compares data, will attempt to cast to same type
+// === compares and additionally enforces type. Will NOT attempt to cast
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // A callback is essentially passing a function OBJECT (not the result from calling the function!) to another function. It should eventually be called inside the function(s) that accepted the callback
 
 function f1() {
